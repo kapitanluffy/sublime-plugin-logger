@@ -1,0 +1,12 @@
+📜 Plugin Logger
+
+Displays the source plugin of your console logs
+
+For issues and feedback:
+https://github.com/kapitanluffy/sublime-plugin-logger/issues
+
+Support us here:
+- https://patreon.com/kapitanluffy
+- https://ko-fi.com/kapitanluffy
+
+Also, thanks to the awesome people on Discord in helping me build this 🎉🎉🎉
