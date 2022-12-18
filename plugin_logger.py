@@ -58,12 +58,10 @@ class _PluginLogWriter(io.TextIOBase):
 
 
 def plugin_loaded():
-    print("Plugin Logger plugin loaded")
     sys.stdout = _PluginLogWriter()  # type: ignore
     sys.stderr = _PluginLogWriter()  # type: ignore
 
 
 def plugin_unloaded():
-    print("Plugin Logger plugin unloaded")
     sys.stdout = sublime._LogWriter() # type: ignore
     sys.stderr = sublime._LogWriter() # type: ignore
