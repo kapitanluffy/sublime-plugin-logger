@@ -10,3 +10,6 @@ Support us here:
 - https://ko-fi.com/kapitanluffy
 
 Also, thanks to the awesome people on Discord in helping me build this 🎉🎉🎉
+
+v1.0.1
+    - Fix plugin exceptions not being logged properly
