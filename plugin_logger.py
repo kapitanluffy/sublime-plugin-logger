@@ -23,6 +23,7 @@ class _PluginLogWriter(io.TextIOBase):
 
         if len(frames) < 3:
             sublime_api.log_message(b)
+            return
 
         # Plugin call should be right after 2 frames
         plugin = self.get_plugin(frames[2])
