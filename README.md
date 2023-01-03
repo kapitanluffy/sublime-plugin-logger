@@ -8,7 +8,7 @@
 <a href="https://www.sublimetext.com/">
     <img src="https://img.shields.io/badge/Made%20For-Sublime-ff9800?logo=sublime%20text" /></a>
 <a href="https://packagecontrol.io/packages/plugin-logger">
-    <img src="https://img.shields.io/packagecontrol/dt/plugin-logger" /></a>
+    <img src="https://img.shields.io/packagecontrol/dt/PluginLogger" /></a>
 <a href="https://github.com/kapitanluffy/sublime-plugin-logger/releases">
     <img src="https://img.shields.io/github/v/tag/kapitanluffy/sublime-plugin-logger?label=release" /></a>
 <a href="https://patreon.com/kapitanluffy">
