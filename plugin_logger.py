@@ -1,14 +1,16 @@
 import sublime
 import sublime_api
 
+import os
 import io
 import sys
 import inspect
 import re
-
+from shutil import copytree
 
 class _PluginLogWriter(io.TextIOBase):
-    def __init__(self):
+    def __init__(self, pyversion="3.8"):
+        self.pyversion = pyversion
         self.buf = None
 
     def flush(self):
@@ -27,7 +29,13 @@ class _PluginLogWriter(io.TextIOBase):
 
         # Plugin call should be right after 2 frames
         plugin = self.get_plugin(frames[2])
-        msg = "[%s]: %s" % (plugin, b) if plugin is not False else b
+        msg = b
+
+        if self.pyversion == "3.3":
+            msg = "[%s]: %s" % (plugin, b) if plugin is not False else b
+
+        if self.pyversion == "3.8":
+            msg = "[%s %s]: %s" % (plugin, self.pyversion, b) if plugin is not False else b
 
         sublime_api.log_message(msg)
 
@@ -59,6 +67,13 @@ class _PluginLogWriter(io.TextIOBase):
 
 
 def plugin_loaded():
+    pkgsPath = sublime.packages_path()
+    cwd = os.path.basename(os.path.dirname(__file__))
+    dir33 = os.path.join(pkgsPath, cwd + "33")
+
+    if not os.path.exists(dir33):
+        copytree(os.path.join(pkgsPath, cwd, "py33"), dir33)
+
     sys.stdout = _PluginLogWriter()  # type: ignore
     sys.stderr = _PluginLogWriter()  # type: ignore
 
