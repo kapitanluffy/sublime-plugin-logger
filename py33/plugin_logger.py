@@ -1,6 +1,7 @@
 import sublime
 import sys
-from aaa_PluginLogger import plugin_logger
+# Rename this if you have renamed the package's directory
+from PluginLogger import plugin_logger
 
 class _PluginLogWriter33(plugin_logger._PluginLogWriter):
     def __init__(self, pyversion):
