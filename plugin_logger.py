@@ -31,10 +31,10 @@ class _PluginLogWriter(io.TextIOBase):
         plugin = self.get_plugin(frames[2])
         msg = b
 
-        if self.pyversion == "3.3":
+        if self.pyversion == "3.8":
             msg = "[%s]: %s" % (plugin, b) if plugin is not False else b
 
-        if self.pyversion == "3.8":
+        if self.pyversion == "3.3":
             msg = "[%s %s]: %s" % (plugin, self.pyversion, b) if plugin is not False else b
 
         sublime_api.log_message(msg)
